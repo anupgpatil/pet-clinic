@@ -1,4 +1,4 @@
-package anup.learnspring.sfpetclinic.model;
+package sfpetclinic.model;
 
 public class PetType {
 
