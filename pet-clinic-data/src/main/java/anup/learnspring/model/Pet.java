@@ -1,4 +1,4 @@
-package sfpetclinic.model;
+package anup.learnspring.model;
 
 import java.time.LocalDate;
 
