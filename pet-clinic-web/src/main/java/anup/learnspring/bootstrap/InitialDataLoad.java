@@ -3,11 +3,7 @@ package anup.learnspring.bootstrap;
 import anup.learnspring.model.Owner;
 import anup.learnspring.model.Vet;
 import anup.learnspring.services.OwnerService;
-import anup.learnspring.services.PetService;
 import anup.learnspring.services.VetService;
-import anup.learnspring.services.map.OwnerServiceMap;
-import anup.learnspring.services.map.PetServiceMap;
-import anup.learnspring.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,13 +11,11 @@ import org.springframework.stereotype.Component;
 public class InitialDataLoad implements CommandLineRunner {
 
     private final OwnerService ownerService;
-    private final PetService petService;
     private final VetService vetService;
 
-    public InitialDataLoad() {
-        ownerService = new OwnerServiceMap();
-        petService = new PetServiceMap();
-        vetService = new VetServiceMap();
+    public InitialDataLoad(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

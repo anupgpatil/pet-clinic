@@ -2,9 +2,11 @@ package anup.learnspring.services.map;
 
 import anup.learnspring.model.Pet;
 import anup.learnspring.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet , Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
