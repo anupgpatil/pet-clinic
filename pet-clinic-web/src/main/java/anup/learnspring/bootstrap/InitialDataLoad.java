@@ -1,8 +1,10 @@
 package anup.learnspring.bootstrap;
 
 import anup.learnspring.model.Owner;
+import anup.learnspring.model.PetType;
 import anup.learnspring.model.Vet;
 import anup.learnspring.services.OwnerService;
+import anup.learnspring.services.PetTypeService;
 import anup.learnspring.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,14 +14,24 @@ public class InitialDataLoad implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
-    public InitialDataLoad(OwnerService ownerService, VetService vetService) {
+    public InitialDataLoad(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType petSavedDogType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        dog.setName("Cat");
+        PetType petSavedCatType = petTypeService.save(cat);
 
         Owner owner = new Owner();
         owner.setFirstName("Owner 1");
