@@ -1,5 +1,6 @@
 package anup.learnspring.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**/
@@ -8,7 +9,7 @@ public class Owner extends Person {
     private String address;
     private String city;
     private String telephone;
-    Set<Pet> pets;
+    Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {
         return address;

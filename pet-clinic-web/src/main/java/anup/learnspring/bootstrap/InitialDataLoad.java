@@ -1,6 +1,7 @@
 package anup.learnspring.bootstrap;
 
 import anup.learnspring.model.Owner;
+import anup.learnspring.model.Pet;
 import anup.learnspring.model.PetType;
 import anup.learnspring.model.Vet;
 import anup.learnspring.services.OwnerService;
@@ -8,6 +9,8 @@ import anup.learnspring.services.PetTypeService;
 import anup.learnspring.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class InitialDataLoad implements CommandLineRunner {
@@ -37,6 +40,16 @@ public class InitialDataLoad implements CommandLineRunner {
         owner.setFirstName("Owner 1");
         //owner.setId(1L);
         owner.setLastName("Owner LName");
+        owner.setAddress("Address Lane 1");
+        owner.setCity("San Jose");
+        owner.setTelephone("911");
+
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(petSavedDogType);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setOwner(owner);
+        mikesPet.setName("Chota Mike");
+        owner.getPets().add(mikesPet);
 
         ownerService.save(owner);
 
@@ -44,6 +57,16 @@ public class InitialDataLoad implements CommandLineRunner {
         owner2.setFirstName("Owner 2");
         //owner2.setId(2L);
         owner2.setLastName("Owner2 LName");
+        owner2.setAddress("Address Lane 2");
+        owner2.setCity("San Francisco");
+        owner2.setTelephone("912");
+
+        Pet fionasCat = new Pet();
+        fionasCat.setPetType(petSavedCatType);
+        fionasCat.setBirthDate(LocalDate.now());
+        fionasCat.setOwner(owner2);
+        fionasCat.setName("Chota Fiona");
+        owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
 
