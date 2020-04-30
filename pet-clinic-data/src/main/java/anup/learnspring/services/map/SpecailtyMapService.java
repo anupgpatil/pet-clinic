@@ -1,13 +1,13 @@
 package anup.learnspring.services.map;
 
 import anup.learnspring.model.Specialty;
-import anup.learnspring.services.SpecialtiesService;
+import anup.learnspring.services.SpecailtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialtiesMapService extends AbstractMapService<Specialty,Long> implements SpecialtiesService {
+public class SpecailtyMapService extends AbstractMapService<Specialty,Long> implements SpecailtyService {
     @Override
     public Set<Specialty> findAll() {
         return super.findAll();
