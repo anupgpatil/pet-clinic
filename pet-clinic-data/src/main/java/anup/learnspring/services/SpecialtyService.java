@@ -2,5 +2,5 @@ package anup.learnspring.services;
 
 import anup.learnspring.model.Specialty;
 
-public interface SpecailtyService extends CrudService<Specialty, Long> {
+public interface SpecialtyService extends CrudService<Specialty, Long> {
 }

@@ -1,7 +1,7 @@
 package anup.learnspring.repositories;
 
-import anup.learnspring.model.PetType;
+import anup.learnspring.model.Specialty;
 import org.springframework.data.repository.CrudRepository;
 
-public interface SpecialtyRepository extends CrudRepository<PetType , Long> {
+public interface SpecialtyRepository extends CrudRepository<Specialty, Long> {
 }
