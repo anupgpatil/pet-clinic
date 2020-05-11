@@ -1,10 +1,7 @@
 package anup.learnspring.bootstrap;
 
 import anup.learnspring.model.*;
-import anup.learnspring.services.OwnerService;
-import anup.learnspring.services.PetTypeService;
-import anup.learnspring.services.SpecialtyService;
-import anup.learnspring.services.VetService;
+import anup.learnspring.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class InitialDataLoad implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specailtyService;
+    private final VisitService visitService;
 
-    public InitialDataLoad(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specailtyService) {
+    public InitialDataLoad(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specailtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specailtyService = specailtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -60,6 +59,13 @@ public class InitialDataLoad implements CommandLineRunner {
 
         ownerService.save(owner);
 
+        Visit visit2 = new Visit();
+        visit2.setDate(LocalDate.now());
+        visit2.setDescription("Not Well");
+        visit2.setPet(mikesPet);
+        visitService.save(visit2);
+
+
         Owner owner2 = new Owner();
         owner2.setFirstName("Owner 2");
         //owner2.setId(2L);
@@ -76,6 +82,12 @@ public class InitialDataLoad implements CommandLineRunner {
         owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
+
+        Visit visit1 = new Visit();
+        visit1.setDate(LocalDate.now());
+        visit1.setDescription("Not Well");
+        visit1.setPet(fionasCat);
+        visitService.save(visit1);
 
         System.out.println("Loaded Data for Owners ");
 
