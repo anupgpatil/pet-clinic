@@ -5,11 +5,13 @@ import anup.learnspring.model.Pet;
 import anup.learnspring.services.OwnerService;
 import anup.learnspring.services.PetService;
 import anup.learnspring.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
