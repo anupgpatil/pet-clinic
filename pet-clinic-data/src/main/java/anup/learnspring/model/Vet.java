@@ -12,12 +12,12 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="vets")
+@Table(name = "vets")
 public class Vet extends Person {
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "vets_specialties" , joinColumns = @JoinColumn(name = "vet_id"),
-    inverseJoinColumns = @JoinColumn(name="specialty_id"))
+    @JoinTable(name = "vets_specialties", joinColumns = @JoinColumn(name = "vet_id"),
+            inverseJoinColumns = @JoinColumn(name = "specialty_id"))
     private Set<Specialty> specialties = new HashSet<>();
 
 }

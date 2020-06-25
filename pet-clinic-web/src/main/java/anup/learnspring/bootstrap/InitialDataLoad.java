@@ -27,8 +27,8 @@ public class InitialDataLoad implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        int count  = petTypeService.findAll().size();
-        if (count==0) {
+        int count = petTypeService.findAll().size();
+        if (count == 0) {
             loadData();
         }
     }
@@ -93,15 +93,15 @@ public class InitialDataLoad implements CommandLineRunner {
 
         Specialty radiology = new Specialty();
         radiology.setDescription("Radiology");
-        Specialty savedSpecialty  = specailtyService.save(radiology);
+        Specialty savedSpecialty = specailtyService.save(radiology);
 
         Specialty surgery = new Specialty();
         surgery.setDescription("Surgery");
-        Specialty savedSpecialty2  = specailtyService.save(surgery);
+        Specialty savedSpecialty2 = specailtyService.save(surgery);
 
         Specialty dentistry = new Specialty();
         dentistry.setDescription("Dentistry");
-        Specialty savedSpecialty3  = specailtyService.save(dentistry);
+        Specialty savedSpecialty3 = specailtyService.save(dentistry);
 
 
         Vet vet1 = new Vet();

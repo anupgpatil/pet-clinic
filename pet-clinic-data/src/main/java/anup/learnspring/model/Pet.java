@@ -13,21 +13,21 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name= "pets")
+@Table(name = "pets")
 public class Pet extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name="type_id")
+    @JoinColumn(name = "type_id")
     private PetType petType;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @Column(name="birth_date")
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")

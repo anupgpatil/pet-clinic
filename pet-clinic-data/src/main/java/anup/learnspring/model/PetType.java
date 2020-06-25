@@ -12,9 +12,9 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="types")
-public class PetType extends BaseEntity{
+@Table(name = "types")
+public class PetType extends BaseEntity {
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 }

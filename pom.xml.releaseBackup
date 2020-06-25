@@ -15,7 +15,7 @@
     </parent>
     <groupId>anup.learnspring</groupId>
     <artifactId>sf-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>sf-pet-clinic</name>
     <description>SF Pet Clinic Project</description>
 
@@ -50,20 +50,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <goals>install</goals>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <scm>
         <developerConnection>sch:git:git@github.com:anupgpatil/pet-clinic.git</developerConnection>
-        <tag>sf-pet-clinic-0.0.1</tag>
     </scm>
 
 </project>
